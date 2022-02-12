@@ -1,5 +1,6 @@
 table {
     width: 100%;
+    
   }
 
   .box{
@@ -28,3 +29,14 @@ table {
   i {
     cursor: pointer;
 }
+
+
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 550px;
+  overflow: auto;
+  }
+  .table-wrapper-scroll-y {
+  display: block;
+  }
