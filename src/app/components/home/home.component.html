@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <div class="card">
+      <div class="card-body">
+           <div class="title">
+               <h3 class="h3">Paises</h3>
+           </div>
+    
+           <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <input type="text" class="form-control" name="filterPais" placeholder="Buscar..." [(ngModel)]="filterPais">
+              </div>
+            </div>
+          </div>
+          <h5 style="margin-top: 30px;" *ngIf="Paises.length == 0">No hay datos para mostrar</h5>
+          <table *ngIf="Paises.length > 0" class="table table-striped mt-5">
+              <thead>
+                <tr>
+                  <th>Bandera</th>
+                  <th>Nombre</th>
+                  <th>Capital</th>
+                  <th>Continente</th>
+                  <th>Ubicación</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pais of Paises | filter:filterPais">
+                  <td > <img class="box" src="{{pais.flags.png}}"></td>
+                  <td>{{ pais.name.common }}</td>
+                  <td>{{ pais.capital }}</td>
+                  <td>{{ pais.continents }}</td>
+                  <td> 
+                     <a  href="{{pais.maps.googleMaps}}"  target="_blank">
+                       <img class="mapa" src="../../../assets/img/map.png">
+                     </a> 
+                  </td>
+                  <td>
+                    <i (click)="eliminarPais(pais)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+  </div>
+</div>
+
+  
